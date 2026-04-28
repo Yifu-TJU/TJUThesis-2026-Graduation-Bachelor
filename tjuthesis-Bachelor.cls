@@ -30,9 +30,10 @@
 % \RequirePackage{multirow} %支持在表格中横跨多列
 
 \setmainfont{Times New Roman}   %设置西文字体为新罗马字体
+\setmonofont{SimHei}    %设置等宽字体为黑体（依旧邪修大法用来修改标题序号数字字体）
 
 \if@songnumber
-    \setsansfont{SimSun} %邪修大法修改参考文件序号为宋体之定义无衬线字体为宋体
+    \setsansfont{SimSun}    %邪修大法修改参考文件序号为宋体之定义无衬线字体为宋体
     \DeclareFieldFormat{labelnumberwidth}{
     {\sffamily\mkbibbrackets{#1}}   %使用自定义的无衬线字体命令
     } %邪修大法修改参考文件序号为宋体之使用无衬线字体命令
@@ -88,18 +89,21 @@
     },
     section={
         format={\zihao{4}\heiti},   % 四号黑体
+        numberformat={\zihao{4}\ttfamily},   % 邪修大法之章节编号数字使用黑体
         beforeskip=20bp,    % 段前间距 （规定 18~24 bp 之间）
         afterskip=20bp,     % 段后间距 （规定 18~24 bp 之间）
         aftername=\quad,    % 编号与标题之间空格
     },
     subsection={
         format={\zihao{4}\heiti},   % 四号黑体
+        numberformat={\zihao{4}\ttfamily},   % 邪修大法之章节编号数字使用黑体
         beforeskip=12bp,    % 段前间距 （规定 12~15 bp 之间）
         afterskip=12bp,     % 段后间距 （规定 12~15 bp 之间）
         aftername=\quad,
     },
     subsubsection={ %单纯为了附录才有这个格式的设置
         format={\zihao{4}\heiti},   % 四号黑体
+        numberformat={\zihao{4}\ttfamily},   % 邪修大法之章节编号数字使用黑体
         beforeskip=12bp,    % 段前间距 （规定 12~15 bp 之间）
         afterskip=12bp,     % 段后间距 （规定 12~15 bp 之间）
         aftername=\quad,
@@ -110,25 +114,19 @@
 \setcounter{tocdepth}{2}    % 设置 tocdepth 目录深度 （2 = subsection，即三级标题）
 \titlecontents{chapter}
     [0em]   % 缩进为 0em = 0 字符
-    {\heiti\zihao{-4}}
+    {\heiti\zihao{-4}\setlength{\baselineskip}{1.2\baselineskip}}   %黑体小四，行距1.2倍（这里是latex的行距）
     {\thecontentslabel\quad}{}
-    {\hspace{.5em}\titlerule*[5bp]{.}\zihao{-4}\contentspage} %
+    {\hspace{.5em}\titlerule*[5bp]{.}\zihao{-4}\contentspage}
 \titlecontents{section}
     [2em]   % 缩进为 2em = 4 字符
-    {\zihao{-4}}
+    {\zihao{-4}\setlength{\baselineskip}{1.2\baselineskip}}
     {\thecontentslabel\quad}{}
     {\hspace{.5em}\titlerule*[5bp]{.}\zihao{-4}\contentspage}
 \titlecontents{subsection}
     [4em]   % 缩进为 4em = 4 字符
-    {\zihao{-4}}
+    {\zihao{-4}\setlength{\baselineskip}{1.2\baselineskip}}
     {\thecontentslabel\quad}{}
     {\hspace{.5em}\titlerule*[5bp]{.}\zihao{-4}\contentspage}
-
-% 定义一个新的分隔符：使用 \quad（1em 空格）
-\DeclareCaptionLabelSeparator{quadspace}{\quad}
-
-% 设置图注表注：字体为 small（5号字9pt），分隔符用刚刚定义的 quadspace
-\captionsetup{font=small,labelsep=quadspace}
 
 \renewcommand{\tablename}{表}                                     % 插表题头
 \renewcommand{\figurename}{图}                                    % 插图题头
@@ -264,7 +262,7 @@
     \setcounter{figure}{0}
     \setcounter{table}{0}
     \setcounter{equation}{0}
-    \def\thesection{附录\Alph{section}}
+    \def\thesection{\heiti{附录}\Alph{section}}
     \def\thesubsection{\Alph{section}.\arabic{subsection}}
     \def\thesubsubsection{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}}
     \def\thefigure{\Alph{section}\ifnum\value{figure}<10 0\fi\arabic{figure}}
