@@ -21,7 +21,7 @@
 \RequirePackage{amsfonts}   %支持公式中使用特殊字体
 \RequirePackage[hidelinks]{hyperref}    % 将交叉引用设置为超链接
 \RequirePackage{newtxmath}  % 新罗马风格数学公式字体
-\RequirePackage{caption}    %用于设置图表标题样式的宏包
+\RequirePackage[font=small]{caption}    %用于设置图表标题样式的宏包
 \RequirePackage{xcolor}     %提供颜色支持的宏包
 \RequirePackage{listings}   %用于设置代码块样式的宏包
 \RequirePackage[style=gb7714-2015]{biblatex}    %参考文献管理的宏包，使用GB/T 7714-2015标准
