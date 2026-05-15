@@ -145,20 +145,36 @@
   \end{figure}
 }
 
-\newcommand{\tablemacro}[6]{ % 表格插入宏
-	\begin{table}[#1]
-		\centering
-		\caption{#2}\zihao{5} % 设置表格内容为五号字
-		\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}#3}
-			\toprule
-			#4 % 表头内容
-			\midrule
-			#5 % 表格主体
-			\bottomrule
-		\end{tabular*}
-		\label{#6}
-	\end{table}
+\newcommand{\tablemacro}[6]{ %表格插入宏
+    \begin{table}[#1] %第一个参数是浮动体样式设置
+    \centering
+    \caption{#2}\zihao{5} %第二个参数是表格标题
+    \begin{tabular}{#3}
+        \toprule
+        #4 %第三个参数是表格列标题，需要手动使用\songtibf加粗
+        \midrule
+        #5 %第四个参数是表格内容
+        \bottomrule
+    \end{tabular}
+    \label{#6} %第五个参数是表格标签
+\end{table}
 }
+
+% \newcommand{\tablemacrofw}[6]{ %页面全宽表格插入宏
+%     \begin{table}[#1] %第一个参数是浮动体样式设置
+%     \centering
+%     \caption{#2}\zihao{5} %第二个参数是表格标题
+%     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}#3}
+%         \toprule
+%         #4 %第三个参数是表格列标题，需要手动使用\songtibf加粗
+%         \midrule
+%         #5 %第四个参数是表格内容
+%         \bottomrule
+%     \end{tabular*}
+%     \label{#6} %第五个参数是表格标签
+% \end{table}
+% }
+
 
 \addbibresource{reference.bib} %添加参考文献数据库文件
 
