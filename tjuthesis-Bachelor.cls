@@ -134,6 +134,9 @@
 \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}         % 使表编号为 7-1 的格式
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}}   % 使公式编号为 7-1 的格式
 
+\captionsetup[table]{labelsep=quad} %表注修改为全角空格
+\captionsetup[figure]{labelsep=quad} %图注修改为全角空格
+
 \graphicspath{{figures/}}   % 定义所有的图像文件在 figures 子目录下
 
 \newcommand{\figuremacro}[5]{ %图片插入宏
