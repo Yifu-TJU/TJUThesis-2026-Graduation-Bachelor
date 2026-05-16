@@ -25,6 +25,8 @@
 \RequirePackage{xcolor}     %提供颜色支持的宏包
 \RequirePackage{listings}   %用于设置代码块样式的宏包
 \RequirePackage[style=gb7714-2015]{biblatex}    %参考文献管理的宏包，使用GB/T 7714-2015标准
+\RequirePackage{enumerate} % 提供列表环境的宏包
+\RequirePackage{enumitem}   % 提供列表格式调整的宏包
 % \RequirePackage{mathtools}%基础数学包基础上增加额外命令，通常和amsmath二选一
 % \RequirePackage{tabularx} %表格自动换行
 % \RequirePackage{multirow} %支持在表格中横跨多列
